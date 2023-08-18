@@ -1,0 +1,41 @@
+# Reading pref.tcl
+# do IITB_RISC_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:04:27 on May 07,2022
+# vcom -reportprogress 300 -93 -work work D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity IITB_RISC
+# -- Compiling architecture risc_architecture of IITB_RISC
+# ** Error: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd(301): Prefix of slice name cannot be type conversion (STD_LOGIC_VECTOR) expression.
+# ** Note: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd(439): VHDL Compiler exiting
+# End time: 23:04:27 on May 07,2022, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# ** Error: C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/vcom failed.
+# Error in macro ./IITB_RISC_run_msim_rtl_vhdl.do line 8
+# C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/vcom failed.
+#     while executing
+# "vcom -93 -work work {D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd}"
+vsim work.iitb_risc
+# vsim work.iitb_risc 
+# Start time: 23:04:51 on May 07,2022
+# Loading std.standard
+# ** Error: (vsim-3173) Entity 'D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/simulation/modelsim/rtl_work.iitb_risc' has no architecture.
+# Error loading design
+# End time: 23:04:52 on May 07,2022, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 0

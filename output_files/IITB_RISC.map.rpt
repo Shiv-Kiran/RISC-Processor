@@ -1,0 +1,616 @@
+Analysis & Synthesis report for IITB_RISC
+Sat May 07 23:20:46 2022
+Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |IITB_RISC|state
+  9. Registers Removed During Synthesis
+ 10. Removed Registers Triggering Further Register Optimizations
+ 11. General Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Port Connectivity Checks: "ALU:alu_main|adder_16_shift:g2|full_adder:add0"
+ 14. Port Connectivity Checks: "ALU:alu_main|adder_16_shift:g2"
+ 15. Port Connectivity Checks: "ALU:alu_main|adder_16:g0|full_adder:add0"
+ 16. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++---------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                              ;
++-----------------------------+---------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Sat May 07 23:20:46 2022       ;
+; Quartus Prime Version       ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
+; Revision Name               ; IITB_RISC                                   ;
+; Top-level Entity Name       ; IITB_RISC                                   ;
+; Family                      ; MAX V                                       ;
+; Total logic elements        ; 0                                           ;
+; Total pins                  ; 2                                           ;
+; Total virtual pins          ; 0                                           ;
+; UFM blocks                  ; 0 / 1 ( 0 % )                               ;
++-----------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Top-level entity name                                            ; IITB_RISC          ; IITB_RISC          ;
+; Family name                                                      ; MAX V              ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 16          ;
+; Maximum allowed            ; 8           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                         ;
++----------------------------------+-----------------+-----------------------+-----------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type             ; File Name with Absolute Path                                                            ; Library ;
++----------------------------------+-----------------+-----------------------+-----------------------------------------------------------------------------------------+---------+
+; iitb_risc.vhd                    ; yes             ; Auto-Found VHDL File  ; D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd      ;         ;
+; register_file.vhd                ; yes             ; Auto-Found VHDL File  ; D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/register_file.vhd  ;         ;
+; alu.vhd                          ; yes             ; Auto-Found VHDL File  ; D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/alu.vhd            ;         ;
+; adder_16.vhd                     ; yes             ; Auto-Found VHDL File  ; D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/adder_16.vhd       ;         ;
+; full_adder.vhd                   ; yes             ; Auto-Found VHDL File  ; D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/full_adder.vhd     ;         ;
+; nand_16.vhd                      ; yes             ; Auto-Found VHDL File  ; D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/nand_16.vhd        ;         ;
+; adder_16_shift.vhd               ; yes             ; Auto-Found VHDL File  ; D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/adder_16_shift.vhd ;         ;
+; mux_16_3x1.vhd                   ; yes             ; Auto-Found VHDL File  ; D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/mux_16_3x1.vhd     ;         ;
+; memory.vhd                       ; yes             ; Auto-Found VHDL File  ; D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/memory.vhd         ;         ;
+; sign_ex_6.vhd                    ; yes             ; Auto-Found VHDL File  ; D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/sign_ex_6.vhd      ;         ;
+; sign_ex_9.vhd                    ; yes             ; Auto-Found VHDL File  ; D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/sign_ex_9.vhd      ;         ;
++----------------------------------+-----------------+-----------------------+-----------------------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Total logic elements                        ; 0     ;
+;     -- Combinational with no register       ; 0     ;
+;     -- Register only                        ; 0     ;
+;     -- Combinational with a register        ; 0     ;
+;                                             ;       ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 0     ;
+;     -- 3 input functions                    ; 0     ;
+;     -- 2 input functions                    ; 0     ;
+;     -- 1 input functions                    ; 0     ;
+;     -- 0 input functions                    ; 0     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 0     ;
+;     -- arithmetic mode                      ; 0     ;
+;     -- qfbk mode                            ; 0     ;
+;     -- register cascade mode                ; 0     ;
+;     -- synchronous clear/load mode          ; 0     ;
+;     -- asynchronous clear/load mode         ; 0     ;
+;                                             ;       ;
+; Total registers                             ; 0     ;
+; I/O pins                                    ; 2     ;
++---------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name ; Entity Name ; Library Name ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+-------------+--------------+
+; |IITB_RISC                 ; 0 (0)       ; 0            ; 0          ; 2    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |IITB_RISC          ; IITB_RISC   ; work         ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+-------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |IITB_RISC|state                                                                                                                                                                                                                                                                                               ;
++-------------+-------------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+-------------+
+; Name        ; state.s_end ; state.s24 ; state.s23 ; state.s22 ; state.s21 ; state.s20 ; state.s19 ; state.s18 ; state.s17 ; state.s16 ; state.s15 ; state.s14 ; state.s13 ; state.s12 ; state.s11 ; state.s10 ; state.s9 ; state.s8 ; state.s7 ; state.s6 ; state.s5 ; state.s4 ; state.s3 ; state.s2 ; state.s1 ; state.start ;
++-------------+-------------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+-------------+
+; state.start ; 0           ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0           ;
+; state.s1    ; 0           ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ; 1           ;
+; state.s2    ; 0           ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ; 0        ; 1           ;
+; state.s3    ; 0           ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ; 0        ; 0        ; 1           ;
+; state.s4    ; 0           ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ; 0        ; 0        ; 0        ; 1           ;
+; state.s5    ; 0           ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 1        ; 0        ; 0        ; 0        ; 0        ; 1           ;
+; state.s6    ; 0           ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 0        ; 0        ; 1        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1           ;
+; state.s7    ; 0           ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 0        ; 1        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1           ;
+; state.s8    ; 0           ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1           ;
+; state.s9    ; 0           ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1           ;
+; state.s10   ; 0           ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1           ;
+; state.s11   ; 0           ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1           ;
+; state.s12   ; 0           ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1           ;
+; state.s13   ; 0           ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1           ;
+; state.s14   ; 0           ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1           ;
+; state.s15   ; 0           ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1           ;
+; state.s16   ; 0           ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1           ;
+; state.s17   ; 0           ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1           ;
+; state.s18   ; 0           ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1           ;
+; state.s19   ; 0           ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1           ;
+; state.s20   ; 0           ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1           ;
+; state.s21   ; 0           ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1           ;
+; state.s22   ; 0           ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1           ;
+; state.s23   ; 0           ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1           ;
+; state.s24   ; 0           ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1           ;
+; state.s_end ; 1           ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1           ;
++-------------+-------------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+-------------+
+
+
++--------------------------------------------------------------+
+; Registers Removed During Synthesis                           ;
++-----------------------------------------+--------------------+
+; Register name                           ; Reason for Removal ;
++-----------------------------------------+--------------------+
+; op_code[0..3]                           ; Lost fanout        ;
+; ir[0,1]                                 ; Lost fanout        ;
+; carry                                   ; Lost fanout        ;
+; zero                                    ; Lost fanout        ;
+; t1[0..15]                               ; Lost fanout        ;
+; t2[0..15]                               ; Lost fanout        ;
+; t3[0..15]                               ; Lost fanout        ;
+; addr[0..15]                             ; Lost fanout        ;
+; t4[0..15]                               ; Lost fanout        ;
+; ir[2..11]                               ; Lost fanout        ;
+; state.start                             ; Lost fanout        ;
+; state.s1                                ; Lost fanout        ;
+; state.s2                                ; Lost fanout        ;
+; state.s3                                ; Lost fanout        ;
+; state.s4                                ; Lost fanout        ;
+; state.s5                                ; Lost fanout        ;
+; state.s6                                ; Lost fanout        ;
+; state.s7                                ; Lost fanout        ;
+; state.s8                                ; Lost fanout        ;
+; state.s9                                ; Lost fanout        ;
+; state.s10                               ; Lost fanout        ;
+; state.s11                               ; Lost fanout        ;
+; state.s12                               ; Lost fanout        ;
+; state.s13                               ; Lost fanout        ;
+; state.s14                               ; Lost fanout        ;
+; state.s15                               ; Lost fanout        ;
+; state.s16                               ; Lost fanout        ;
+; state.s17                               ; Lost fanout        ;
+; state.s18                               ; Lost fanout        ;
+; state.s19                               ; Lost fanout        ;
+; state.s20                               ; Lost fanout        ;
+; state.s21                               ; Lost fanout        ;
+; state.s22                               ; Lost fanout        ;
+; state.s23                               ; Lost fanout        ;
+; state.s24                               ; Lost fanout        ;
+; state.s_end                             ; Lost fanout        ;
+; Total Number of Removed Registers = 124 ;                    ;
++-----------------------------------------+--------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                            ;
++---------------+--------------------+---------------------------------------------------------------------------------------------------+
+; Register name ; Reason for Removal ; Registers Removed due to This Register                                                            ;
++---------------+--------------------+---------------------------------------------------------------------------------------------------+
+; carry         ; Lost Fanouts       ; t1[15], ir[8], state.s1, state.s2, state.s5, state.s7, state.s8, state.s15, state.s17, state.s18, ;
+;               ;                    ; state.s21, state.s22, state.s24                                                                   ;
+; zero          ; Lost Fanouts       ; t2[7], t2[6], t2[5], t2[4], t2[3], t2[2], t2[1], t2[0], state.s12, state.s23                      ;
+; op_code[0]    ; Lost Fanouts       ; state.start, state.s3, state.s9, state.s11, state.s14, state.s16, state.s19, state.s20            ;
+; addr[0]       ; Lost Fanouts       ; state.s13, state.s_end                                                                            ;
+; t1[14]        ; Lost Fanouts       ; ir[7]                                                                                             ;
+; t1[13]        ; Lost Fanouts       ; ir[6]                                                                                             ;
+; t1[12]        ; Lost Fanouts       ; ir[5]                                                                                             ;
+; t1[11]        ; Lost Fanouts       ; ir[4]                                                                                             ;
+; t1[10]        ; Lost Fanouts       ; ir[3]                                                                                             ;
+; t1[9]         ; Lost Fanouts       ; ir[2]                                                                                             ;
+; t2[15]        ; Lost Fanouts       ; state.s10                                                                                         ;
+; t4[15]        ; Lost Fanouts       ; state.s4                                                                                          ;
++---------------+--------------------+---------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------+
+; 3:1                ; 12 bits   ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |IITB_RISC|ir[6]                           ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |IITB_RISC|addr[15]                        ;
+; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |IITB_RISC|t2[4]                           ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; Yes        ; |IITB_RISC|t1[4]                           ;
+; 6:1                ; 9 bits    ; 36 LEs        ; 18 LEs               ; 18 LEs                 ; Yes        ; |IITB_RISC|t1[13]                          ;
+; 7:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; Yes        ; |IITB_RISC|t4[3]                           ;
+; 7:1                ; 9 bits    ; 36 LEs        ; 27 LEs               ; 9 LEs                  ; Yes        ; |IITB_RISC|t4[10]                          ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |IITB_RISC|op_code[2]                      ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |IITB_RISC|ALU:alu_main|mux_16_3x1:g3|Mux4 ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |IITB_RISC|Selector211                     ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |IITB_RISC|Selector203                     ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |IITB_RISC|Selector159                     ;
+; 5:1                ; 16 bits   ; 48 LEs        ; 64 LEs               ; -16 LEs                ; No         ; |IITB_RISC|Selector151                     ;
+; 5:1                ; 16 bits   ; 48 LEs        ; 48 LEs               ; 0 LEs                  ; No         ; |IITB_RISC|Selector190                     ;
+; 5:1                ; 16 bits   ; 48 LEs        ; 64 LEs               ; -16 LEs                ; No         ; |IITB_RISC|Selector177                     ;
+; 11:1               ; 4 bits    ; 28 LEs        ; 20 LEs               ; 8 LEs                  ; No         ; |IITB_RISC|state                           ;
+; 12:1               ; 4 bits    ; 32 LEs        ; 8 LEs                ; 24 LEs                 ; No         ; |IITB_RISC|state                           ;
+; 13:1               ; 2 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |IITB_RISC|state                           ;
+; 14:1               ; 2 bits    ; 18 LEs        ; 6 LEs                ; 12 LEs                 ; No         ; |IITB_RISC|state                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------+
+
+
++----------------------------------------------------------------------------+
+; Port Connectivity Checks: "ALU:alu_main|adder_16_shift:g2|full_adder:add0" ;
++------+-------+----------+--------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                          ;
++------+-------+----------+--------------------------------------------------+
+; y    ; Input ; Info     ; Stuck at GND                                     ;
+; z    ; Input ; Info     ; Stuck at GND                                     ;
++------+-------+----------+--------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ALU:alu_main|adder_16_shift:g2"                                                      ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; cout1 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------+
+; Port Connectivity Checks: "ALU:alu_main|adder_16:g0|full_adder:add0" ;
++------+-------+----------+--------------------------------------------+
+; Port ; Type  ; Severity ; Details                                    ;
++------+-------+----------+--------------------------------------------+
+; z    ; Input ; Info     ; Stuck at GND                               ;
++------+-------+----------+--------------------------------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+    Info: Processing started: Sat May 07 23:20:36 2022
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off IITB_RISC -c IITB_RISC
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
+Warning (12125): Using design file iitb_risc.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: IITB_RISC-risc_architecture File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 15
+    Info (12023): Found entity 1: IITB_RISC File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 9
+Info (12127): Elaborating entity "IITB_RISC" for the top level hierarchy
+Warning (10492): VHDL Process Statement warning at iitb_risc.vhd(107): signal "dout_mem" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 107
+Warning (10492): VHDL Process Statement warning at iitb_risc.vhd(145): signal "r1_data" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 145
+Warning (10492): VHDL Process Statement warning at iitb_risc.vhd(146): signal "r2_data" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 146
+Warning (10492): VHDL Process Statement warning at iitb_risc.vhd(166): signal "alu_c" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 166
+Warning (10492): VHDL Process Statement warning at iitb_risc.vhd(167): signal "z_flag" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 167
+Warning (10492): VHDL Process Statement warning at iitb_risc.vhd(181): signal "alu_c" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 181
+Warning (10492): VHDL Process Statement warning at iitb_risc.vhd(182): signal "z_flag" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 182
+Warning (10492): VHDL Process Statement warning at iitb_risc.vhd(183): signal "c_flag" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 183
+Warning (10492): VHDL Process Statement warning at iitb_risc.vhd(198): signal "sg_ex6" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 198
+Warning (10492): VHDL Process Statement warning at iitb_risc.vhd(223): signal "alu_c" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 223
+Warning (10492): VHDL Process Statement warning at iitb_risc.vhd(236): signal "r1_data" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 236
+Warning (10492): VHDL Process Statement warning at iitb_risc.vhd(239): signal "alu_c" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 239
+Warning (10492): VHDL Process Statement warning at iitb_risc.vhd(240): signal "z_flag" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 240
+Warning (10492): VHDL Process Statement warning at iitb_risc.vhd(241): signal "c_flag" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 241
+Warning (10492): VHDL Process Statement warning at iitb_risc.vhd(257): signal "r1_data" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 257
+Warning (10492): VHDL Process Statement warning at iitb_risc.vhd(260): signal "alu_c" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 260
+Warning (10492): VHDL Process Statement warning at iitb_risc.vhd(271): signal "dout_mem" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 271
+Warning (10492): VHDL Process Statement warning at iitb_risc.vhd(286): signal "r2_data" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 286
+Warning (10492): VHDL Process Statement warning at iitb_risc.vhd(308): signal "sg_ex9" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 308
+Warning (10492): VHDL Process Statement warning at iitb_risc.vhd(319): signal "r1_data" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 319
+Warning (10492): VHDL Process Statement warning at iitb_risc.vhd(322): signal "alu_c" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 322
+Warning (10492): VHDL Process Statement warning at iitb_risc.vhd(336): signal "sg_ex9" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 336
+Warning (10492): VHDL Process Statement warning at iitb_risc.vhd(344): signal "r1_data" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 344
+Warning (10492): VHDL Process Statement warning at iitb_risc.vhd(357): signal "dout_mem" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 357
+Warning (10492): VHDL Process Statement warning at iitb_risc.vhd(366): signal "r1_data" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 366
+Warning (10492): VHDL Process Statement warning at iitb_risc.vhd(378): signal "alu_c" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 378
+Warning (10492): VHDL Process Statement warning at iitb_risc.vhd(388): signal "alu_c" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 388
+Warning (10492): VHDL Process Statement warning at iitb_risc.vhd(406): signal "alu_c" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 406
+Warning (10631): VHDL Process Statement warning at iitb_risc.vhd(81): inferring latch(es) for signal or variable "w_reg", which holds its previous value in one or more paths through the process File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Warning (10631): VHDL Process Statement warning at iitb_risc.vhd(81): inferring latch(es) for signal or variable "w_mem", which holds its previous value in one or more paths through the process File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Warning (10631): VHDL Process Statement warning at iitb_risc.vhd(81): inferring latch(es) for signal or variable "addr1", which holds its previous value in one or more paths through the process File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Warning (10631): VHDL Process Statement warning at iitb_risc.vhd(81): inferring latch(es) for signal or variable "ra1", which holds its previous value in one or more paths through the process File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Warning (10631): VHDL Process Statement warning at iitb_risc.vhd(81): inferring latch(es) for signal or variable "ra2", which holds its previous value in one or more paths through the process File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Warning (10631): VHDL Process Statement warning at iitb_risc.vhd(81): inferring latch(es) for signal or variable "op_alu", which holds its previous value in one or more paths through the process File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Warning (10631): VHDL Process Statement warning at iitb_risc.vhd(81): inferring latch(es) for signal or variable "shif_alu", which holds its previous value in one or more paths through the process File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Warning (10631): VHDL Process Statement warning at iitb_risc.vhd(81): inferring latch(es) for signal or variable "alu_a", which holds its previous value in one or more paths through the process File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Warning (10631): VHDL Process Statement warning at iitb_risc.vhd(81): inferring latch(es) for signal or variable "alu_b", which holds its previous value in one or more paths through the process File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Warning (10631): VHDL Process Statement warning at iitb_risc.vhd(81): inferring latch(es) for signal or variable "ra3", which holds its previous value in one or more paths through the process File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Warning (10631): VHDL Process Statement warning at iitb_risc.vhd(81): inferring latch(es) for signal or variable "din_reg", which holds its previous value in one or more paths through the process File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Warning (10631): VHDL Process Statement warning at iitb_risc.vhd(81): inferring latch(es) for signal or variable "im_6", which holds its previous value in one or more paths through the process File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Warning (10631): VHDL Process Statement warning at iitb_risc.vhd(81): inferring latch(es) for signal or variable "addr2", which holds its previous value in one or more paths through the process File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Warning (10631): VHDL Process Statement warning at iitb_risc.vhd(81): inferring latch(es) for signal or variable "din_mem", which holds its previous value in one or more paths through the process File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Warning (10631): VHDL Process Statement warning at iitb_risc.vhd(81): inferring latch(es) for signal or variable "im_9", which holds its previous value in one or more paths through the process File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "im_9[0]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "im_9[1]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "im_9[2]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "im_9[3]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "im_9[4]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "im_9[5]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "im_9[6]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "im_9[7]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "im_9[8]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "din_mem[0]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "din_mem[1]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "din_mem[2]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "din_mem[3]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "din_mem[4]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "din_mem[5]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "din_mem[6]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "din_mem[7]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "din_mem[8]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "din_mem[9]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "din_mem[10]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "din_mem[11]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "din_mem[12]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "din_mem[13]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "din_mem[14]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "din_mem[15]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "addr2[0]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "addr2[1]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "addr2[2]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "addr2[3]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "addr2[4]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "addr2[5]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "addr2[6]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "addr2[7]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "addr2[8]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "addr2[9]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "addr2[10]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "addr2[11]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "addr2[12]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "addr2[13]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "addr2[14]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "addr2[15]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "im_6[0]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "im_6[1]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "im_6[2]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "im_6[3]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "im_6[4]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "im_6[5]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "din_reg[0]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "din_reg[1]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "din_reg[2]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "din_reg[3]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "din_reg[4]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "din_reg[5]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "din_reg[6]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "din_reg[7]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "din_reg[8]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "din_reg[9]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "din_reg[10]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "din_reg[11]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "din_reg[12]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "din_reg[13]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "din_reg[14]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "din_reg[15]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "ra3[0]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "ra3[1]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "ra3[2]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "alu_b[0]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "alu_b[1]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "alu_b[2]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "alu_b[3]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "alu_b[4]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "alu_b[5]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "alu_b[6]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "alu_b[7]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "alu_b[8]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "alu_b[9]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "alu_b[10]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "alu_b[11]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "alu_b[12]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "alu_b[13]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "alu_b[14]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "alu_b[15]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "alu_a[0]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "alu_a[1]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "alu_a[2]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "alu_a[3]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "alu_a[4]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "alu_a[5]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "alu_a[6]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "alu_a[7]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "alu_a[8]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "alu_a[9]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "alu_a[10]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "alu_a[11]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "alu_a[12]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "alu_a[13]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "alu_a[14]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "alu_a[15]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "shif_alu" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "op_alu" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "ra2[0]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "ra2[1]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "ra2[2]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "ra1[0]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "ra1[1]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "ra1[2]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "addr1[0]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "addr1[1]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "addr1[2]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "addr1[3]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "addr1[4]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "addr1[5]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "addr1[6]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "addr1[7]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "addr1[8]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "addr1[9]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "addr1[10]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "addr1[11]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "addr1[12]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "addr1[13]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "addr1[14]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "addr1[15]" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "w_mem" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Info (10041): Inferred latch for "w_reg" at iitb_risc.vhd(81) File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 81
+Warning (12125): Using design file register_file.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: register_file-str File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/register_file.vhd Line: 19
+    Info (12023): Found entity 1: register_file File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/register_file.vhd Line: 10
+Info (12128): Elaborating entity "register_file" for hierarchy "register_file:reg_main" File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 74
+Warning (12125): Using design file alu.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: ALU-alu_architecture File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/alu.vhd Line: 13
+    Info (12023): Found entity 1: ALU File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/alu.vhd Line: 4
+Info (12128): Elaborating entity "ALU" for hierarchy "ALU:alu_main" File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 76
+Warning (10036): Verilog HDL or VHDL warning at alu.vhd(47): object "i6" assigned a value but never read File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/alu.vhd Line: 47
+Warning (12125): Using design file adder_16.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: adder_16-add_arc File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/adder_16.vhd Line: 12
+    Info (12023): Found entity 1: adder_16 File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/adder_16.vhd Line: 4
+Info (12128): Elaborating entity "adder_16" for hierarchy "ALU:alu_main|adder_16:g0" File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/alu.vhd Line: 58
+Warning (12125): Using design file full_adder.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: full_adder-full_arc File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/full_adder.vhd Line: 12
+    Info (12023): Found entity 1: full_adder File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/full_adder.vhd Line: 4
+Info (12128): Elaborating entity "full_adder" for hierarchy "ALU:alu_main|adder_16:g0|full_adder:add0" File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/adder_16.vhd Line: 25
+Warning (12125): Using design file nand_16.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: nand_16-nand_arc File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/nand_16.vhd Line: 11
+    Info (12023): Found entity 1: nand_16 File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/nand_16.vhd Line: 4
+Info (12128): Elaborating entity "nand_16" for hierarchy "ALU:alu_main|nand_16:g1" File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/alu.vhd Line: 59
+Warning (12125): Using design file adder_16_shift.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: adder_16_shift-shift_adder File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/adder_16_shift.vhd Line: 12
+    Info (12023): Found entity 1: adder_16_shift File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/adder_16_shift.vhd Line: 4
+Info (12128): Elaborating entity "adder_16_shift" for hierarchy "ALU:alu_main|adder_16_shift:g2" File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/alu.vhd Line: 60
+Warning (12125): Using design file mux_16_3x1.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: mux_16_3x1-behavioral File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/mux_16_3x1.vhd Line: 12
+    Info (12023): Found entity 1: mux_16_3x1 File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/mux_16_3x1.vhd Line: 4
+Info (12128): Elaborating entity "mux_16_3x1" for hierarchy "ALU:alu_main|mux_16_3x1:g3" File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/alu.vhd Line: 61
+Warning (10492): VHDL Process Statement warning at mux_16_3x1.vhd(21): signal "c1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/mux_16_3x1.vhd Line: 21
+Warning (10492): VHDL Process Statement warning at mux_16_3x1.vhd(22): signal "c1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/mux_16_3x1.vhd Line: 22
+Warning (12125): Using design file memory.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: memory-behave File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/memory.vhd Line: 16
+    Info (12023): Found entity 1: memory File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/memory.vhd Line: 9
+Info (12128): Elaborating entity "memory" for hierarchy "memory:mem_main" File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 77
+Warning (12125): Using design file sign_ex_6.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: sign_ex_6-sign6_arc File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/sign_ex_6.vhd Line: 11
+    Info (12023): Found entity 1: sign_ex_6 File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/sign_ex_6.vhd Line: 4
+Info (12128): Elaborating entity "sign_ex_6" for hierarchy "sign_ex_6:sign6_ex" File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 78
+Warning (12125): Using design file sign_ex_9.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: sign_ex_9-sign9_arc File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/sign_ex_9.vhd Line: 9
+    Info (12023): Found entity 1: sign_ex_9 File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/sign_ex_9.vhd Line: 4
+Info (12128): Elaborating entity "sign_ex_9" for hierarchy "sign_ex_9:sign9_ex" File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 79
+Info (17049): 124 registers lost all their fanouts during netlist optimizations.
+Warning (21074): Design contains 2 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "rst" File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 11
+    Warning (15610): No output dependent on input pin "clk" File: D:/ME/Me/Academics/sem4/CS 232 - Architecture Lab/Project1/IITB_RISC/iitb_risc.vhd Line: 11
+Info (21057): Implemented 2 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 2 input pins
+    Info (21059): Implemented 0 output pins
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 61 warnings
+    Info: Peak virtual memory: 4762 megabytes
+    Info: Processing ended: Sat May 07 23:20:46 2022
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:24
+
+
